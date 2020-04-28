@@ -12,7 +12,7 @@ const passport = require('./config/passport')
 const session = require('express-session')
 
 mongoose
-  .connect('mongodb://localhost/recipely', {
+  .connect(process.env.DB, {
     useNewUrlParser: true,
     useNewUrlParser: true,
     useCreateIndex: true,
