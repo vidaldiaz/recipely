@@ -4,12 +4,14 @@ const uploadCloud = require('../config/cloudinary')
 
 const {
   addRecipesView,
-  showRecipesView,
+  showMatchedRecipes,
   showRecipesPost,
+  showRecipeFullDetails,
 } = require('../controllers/recipes.controller')
 
 router.get('/addRecipes', addRecipesView)
 
-router.get('/showRecipes/:id', showRecipesView)
+router.get('/details/:id', showRecipeFullDetails)
+router.get('/showRecipes/:id', showMatchedRecipes)
 
 module.exports = router

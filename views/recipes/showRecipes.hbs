@@ -1,1 +1,31 @@
-<h1>Bitch</h1>
+<h3>You ask for: </h3>
+{{#each ingredientsArray}}
+<span>{{this}} </span>
+{{/each}}
+
+<h2>We found {{counter}} recipes!</h2>
+
+
+<div class="fullMatches">
+  {{#each fullMatchesUnique}}
+  <a href="/recipes/details/{{id}}">
+    <h5>{{recipeName}}</h5>
+  </a>
+  {{!-- <img src="{{recipeImage}}" alt="recipe image">
+  <h3>Ingredients:</h3>
+  <ul>
+    {{#each ingredients}}
+    <li>{{this}}</li>
+    {{/each}}
+  </ul>
+  <a href="{{recipeSite}}">Click to Get Instructions</a>--}}
+  <hr>
+  {{/each}}
+</div>
+
+<div class="semiMatches">
+  <h4>Related Recipes</h4>
+  {{#each semiMatchesUnique}}
+  <a href="/recipes/details/{{id}}"><span>{{recipeName}}</span></a>
+  {{/each}}
+</div>
