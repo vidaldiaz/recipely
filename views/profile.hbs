@@ -1,0 +1,16 @@
+{{!-- {{#each inventories}}
+<div>
+  <p>{{this.products}}</p>
+</div>
+
+{{/each}} --}}
+
+<ul>
+  {{#each items}}
+  {{#each this.products}}
+  <li>{{this}}</li>
+  {{/each}}
+  <a href="/inventory/edit/{{this._id}}"><button>Edit</button></a>
+  {{/each}}
+
+</ul>

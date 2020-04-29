@@ -12,7 +12,7 @@ const passport = require('./config/passport')
 const session = require('express-session')
 
 mongoose
-  .connect('mongodb://localhost/recipely', {
+  .connect(process.env.DB, {
     useNewUrlParser: true,
     useNewUrlParser: true,
     useCreateIndex: true,
@@ -71,6 +71,8 @@ app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico')))
 app.locals.title = 'Express - Generated with IronGenerator'
 
 const index = require('./routes/index')
+const inventory = require('./routes/inventory')
+app.use('/inventory', inventory)
 app.use('/', index)
 
 module.exports = app

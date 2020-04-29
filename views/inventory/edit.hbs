@@ -1,0 +1,28 @@
+<form method="POST" action="/inventory/edit/{{items._id}}">
+  <input type="text" id="inventoryInput" name="products" placeholder="Add a product">
+  <button type="button" onclick="inventoryList()">Add Item</button>
+  <ul id="inventoryList" style="list-style-type: none;">
+    {{#each items}}
+    {{#each this.products}}
+    <li>
+      <input type="text" value="{{this}}" name="products">
+      <button class="btn btn-remove">Delete</button>
+    </li>
+    {{/each}}
+    {{/each}}
+  </ul>
+  <button type="submit">Update Grocery List</button>
+</form>
+<br>
+<form action="/inventory/delete/{{items._id}}" method="POST">
+  <a href="/inventory/delete/{{items._id}}"></a><button>Delete All</button></a>
+</form>
+
+
+<script>
+  function removeProduct() {
+    const buttons = document.querySelectorAll('.btn.btn-remove')
+    buttons.forEach(btn => (btn.onclick = () => btn.parentNode.remove()))
+  }
+  removeProduct()
+</script>

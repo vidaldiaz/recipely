@@ -1,4 +1,8 @@
-const results = [
+require('dotenv').config()
+const Recipe = require('../models/Recipe')
+const mongoose = require('mongoose')
+
+const data = [
   {
     recipeName: 'Ginger Champagne',
     recipeSite: 'http://allrecipes.com/Recipe/Ginger-Champagne/Detail.aspx',
@@ -6524,3 +6528,16 @@ const results = [
     recipeImage: 'http://img.recipepuppy.com/1115.jpg',
   },
 ]
+
+mongoose
+  .connect(process.env.DB, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
+  .then(async () => {
+    const recipesCreated = await Recipe.create(data)
+    const { length } = recipesCreated
+    console.log(`${length} recipes created`)
+    mongoose.connection.close()
+  })
+  .catch((err) => console.log('Something went wrong', err))

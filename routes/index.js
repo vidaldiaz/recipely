@@ -8,6 +8,7 @@ const {
   signupProcess,
   loginProcess,
   showPlaces,
+  profileView,
 } = require('../controllers/index.controller')
 
 /* GET home page */
@@ -29,5 +30,7 @@ router.get(
     scope: ['email'],
   })
 )
+
+router.get('/profile', profileView)
 
 module.exports = router
