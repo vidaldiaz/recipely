@@ -1,0 +1,20 @@
+<form action="/recipes/addRecipes" method="POST" enctype="multipart/form-data">
+  <label for="recipeName">Name</label>
+  <input type="text" name="recipeName">
+  <br>
+  <br>
+  <label for="ingredients">Ingredients</label>
+  <input type="text" name="ingredients">
+  <br>
+  <br>
+  <label for="recipeSteps">Steps</label>
+  <br>
+  <textarea name="recipeSteps" cols="40" rows="15"></textarea>
+  <br>
+  <br>
+  <label for="recipeImage">Image</label>
+  <input type="file" name="recipeImage">
+  <br>
+  <br>
+  <button type="submit">Upload</button>
+</form>

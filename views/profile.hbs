@@ -11,6 +11,12 @@
   <li>{{this}}</li>
   {{/each}}
   <a href="/inventory/edit/{{this._id}}"><button>Edit</button></a>
+  <a href="/recipes/showRecipes/{{this._id}}"><button>Search Recipe</button></a>
   {{/each}}
 
 </ul>
+
+<div>
+  <h2>Share your recipes with the world!</h2>
+  <a href="/recipes/addRecipes"><button>Add Recipe</button></a>
+</div>
