@@ -1,16 +1,20 @@
-<ul>
-  {{#each items}}
-  {{#each this.products}}
-  <li>{{this}}</li>
-  {{/each}}
-  <a href="/inventory/edit/{{this._id}}"><button>Edit</button></a>
-  <a href="/recipes/showRecipes/{{this._id}}"><button>Search Recipe</button></a>
-  {{/each}}
+<h1>Welcome ---username---</h1>
+<div class="profile inventoryList">
+  <ul>
+    {{#each items}}
+    {{#each this.products}}
+    <li>{{this}}</li>
+    {{/each}}
+    <a href="/inventory/edit/{{this._id}}"><button>Edit</button></a>
+    <a href="/recipes/showRecipes/{{this._id}}"><button>Search Recipes</button></a>
+    {{/each}}
+  </ul>
+  <br>
+  <a href="/inventory"><button>Create Ingredients List</button></a>
+</div>
 
-</ul>
-
-<div>
-  <h1>Share your recipes with the world!</h1>
+<div class="profile recipesView">
+  <h2>Share your recipes with the world!</h2>
   <a href="/recipes/addRecipes"><button>Add Recipe</button></a>
   <h2>Your Recipes</h2>
   {{#each recipes}}

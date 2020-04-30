@@ -1,0 +1,13 @@
+<h2>{{recipeName}}</h2>
+
+
+<div class="detailed View">
+  <img src="{{recipeImage}}" alt="recipe image">
+  <h3>Ingredients:</h3>
+  <ul>
+    {{#each ingredients}}
+    <li>{{this}}</li>
+    {{/each}}
+  </ul>
+  <a href="{{recipeSite}}">Click to Get Instructions</a>
+</div>

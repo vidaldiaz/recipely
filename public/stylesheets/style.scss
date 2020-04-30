@@ -1,8 +1,25 @@
 body {
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
 }
 
 a {
-  color: #00B7FF;
+  color: #00b7ff;
+}
+
+.profile {
+  border: 1px solid black;
+  margin-bottom: 3%;
+}
+
+.semiMatches span {
+  color: gray;
+  border: 1px solid black;
+  border-radius: 3px;
+  margin: 5px;
+  font-size: 10px;
+}
+.semiMatches a {
+  text-decoration: none;
+  margin-bottom: 5px;
 }
