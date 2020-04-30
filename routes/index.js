@@ -2,6 +2,7 @@ const express = require('express')
 const router = express.Router()
 const passport = require('passport')
 const isAuth = require('../middlewares/isAuth')
+const isLogged = require('../middlewares/isLogged')
 
 const {
   loginView,
@@ -20,8 +21,8 @@ router.get('/', (req, res, next) => {
   res.render('index')
 })
 
-router.get('/login', loginView)
-router.get('/signup', signupView)
+router.get('/login', isLogged, loginView)
+router.get('/signup', isLogged, signupView)
 router.post('/signup', signupProcess)
 router.post('/login', loginProcess)
 
