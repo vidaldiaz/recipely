@@ -19,8 +19,16 @@ exports.loginProcess = passport.authenticate('local', {
 })
 
 exports.profileView = async (req, res) => {
-  let items = await Inventory.find()
-  let recipes = await Recipes.find()
-  console.log(recipes)
-  res.render('profile', { items, recipes })
+  console.log(req.user)
+  const { name, _id } = req.user
+  const currentUserInventories = await Inventory.find({ user: _id })
+  console.log(currentUserInventories)
+  let currentUserRecipes = await Recipes.find({ user: _id })
+  console.log(currentUserRecipes)
+  res.render('profile', { currentUserInventories, currentUserRecipes, name })
+}
+
+exports.logout = (req, res) => {
+  req.logout()
+  res.redirect('/login')
 }

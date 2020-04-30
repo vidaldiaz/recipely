@@ -1,7 +1,8 @@
-<h1>Welcome ---username---</h1>
+<h1>Welcome {{name}}</h1>
 <div class="profile inventoryList">
+
   <ul>
-    {{#each items}}
+    {{#each currentUserInventories}}
     {{#each this.products}}
     <li>{{this}}</li>
     {{/each}}
@@ -17,7 +18,7 @@
   <h2>Share your recipes with the world!</h2>
   <a href="/recipes/addRecipes"><button>Add Recipe</button></a>
   <h2>Your Recipes</h2>
-  {{#each recipes}}
+  {{#each currentUserRecipes}}
   <h3>{{this.recipeName}}</h3>
   <img src="{{this.recipePath}}" alt="">
   <p>Ingredients: {{this.ingredients}}</p>

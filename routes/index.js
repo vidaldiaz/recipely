@@ -10,6 +10,7 @@ const {
   loginProcess,
   showPlaces,
   profileView,
+  logout,
 } = require('../controllers/index.controller')
 
 const { addRecipesPost } = require('../controllers/recipes.controller')
@@ -35,5 +36,7 @@ router.get(
 )
 
 router.get('/profile', isAuth, profileView)
+
+router.get('/logout', logout)
 
 module.exports = router

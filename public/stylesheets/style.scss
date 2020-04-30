@@ -11,12 +11,16 @@ a {
   border: 1px solid black;
   margin-bottom: 3%;
 }
-
+.semiMatches {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
 .semiMatches span {
   color: gray;
   border: 1px solid black;
   border-radius: 3px;
-  margin: 5px;
+  padding: 2px 5px;
   font-size: 10px;
 }
 .semiMatches a {

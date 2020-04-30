@@ -8,6 +8,7 @@
 
 <div class="fullMatches">
   {{#each fullMatchesUnique}}
+  <img src="{{recipeImage}}" alt="recipe image">
   <a href="/recipes/details/{{id}}">
     <h5>{{recipeName}}</h5>
   </a>
@@ -23,8 +24,9 @@
   {{/each}}
 </div>
 
+<h4>Related Recipes</h4>
 <div class="semiMatches">
-  <h4>Related Recipes</h4>
+
   {{#each semiMatchesUnique}}
   <a href="/recipes/details/{{id}}"><span>{{recipeName}}</span></a>
   {{/each}}
