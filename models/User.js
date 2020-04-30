@@ -12,6 +12,12 @@ const userSchema = new Schema(
         ref: 'Recipe',
       },
     ],
+    inventories: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: 'Inventory',
+      },
+    ],
   },
   {
     versionKey: false,

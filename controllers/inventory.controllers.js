@@ -1,11 +1,14 @@
 const Inventory = require('../models/Inventory')
+const User = require('../models/User')
 
 exports.inventoryView = (req, res) => res.render('inventory/inventory')
 
 exports.inventoryPost = async (req, res) => {
   let { products } = req.body
+  const user = req.user.id
   products.shift()
-  await Inventory.create({ products })
+  const newInventory = await Inventory.create({ products, user: req.user.id })
+  await User.findByIdAndUpdate(user, { $push: { inventories: newInventory } })
   res.redirect('/profile')
 }
 

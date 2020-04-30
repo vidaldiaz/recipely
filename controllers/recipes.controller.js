@@ -27,8 +27,15 @@ exports.editRecipeView = async (req, res) => {
 }
 exports.editRecipePost = async (req, res) => {
   const { id } = req.params
-  const recipe = await Recipe.findByIdAndUpdate(id, { ...req.body })
-  console.log(recipe)
+  const { url: recipePath, originalName: recipeImage } = req.file
+    ? req.file
+    : { url: (id.recipePath = id.recipePath), originalName: id.recipeImage }
+  const recipe = await Recipe.findByIdAndUpdate(
+    id,
+    { $set: { ...req.body, recipeImage, recipePath } },
+    { new: false }
+  )
+  res.redirect('/profile')
 }
 
 exports.showMatchedRecipes = async (req, res) => {
@@ -78,4 +85,9 @@ exports.showRecipeFullDetails = async (req, res) => {
   const { id } = req.params
   const currentRecipe = await Recipe.findById(id)
   res.render('recipes/detailedViewRecipe', currentRecipe)
+}
+
+exports.deleteRecipe = async (req, res) => {
+  await Recipe.findByIdAndDelete(req.params.id)
+  res.redirect('/profile')
 }
