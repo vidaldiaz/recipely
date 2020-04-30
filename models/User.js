@@ -18,6 +18,12 @@ const userSchema = new Schema(
         ref: 'Inventory',
       },
     ],
+    comments: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: 'Comment',
+      },
+    ],
   },
   {
     versionKey: false,

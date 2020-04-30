@@ -21,6 +21,5 @@ exports.loginProcess = passport.authenticate('local', {
 exports.profileView = async (req, res) => {
   let items = await Inventory.find()
   let recipes = await Recipes.find()
-  console.log(recipes)
   res.render('profile', { items, recipes })
 }

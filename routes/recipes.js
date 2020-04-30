@@ -14,13 +14,18 @@ const {
   deleteRecipe,
 } = require('../controllers/recipes.controller')
 
+const { addComment } = require('../controllers/comments.controller')
+
 router.get('/addRecipes', isAuth, addRecipesView)
 router.post('/addRecipes', uploadCloud.single('recipeImage'), addRecipesPost)
 
 router.get('/editRecipes/:id', editRecipeView)
 router.post('/editRecipes/:id', uploadCloud.single('recipeImage'), editRecipePost)
+
 router.get('/details/:id', showRecipeFullDetails)
+
 router.get('/showRecipes/:id', showMatchedRecipes)
+
 router.get('/delete/:id', deleteRecipe)
 
 module.exports = router
