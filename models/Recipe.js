@@ -16,6 +16,12 @@ const recipeSchema = new Schema(
     recipeSteps: String,
     recipeImage: String,
     recipePath: String,
+    comments: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: 'Comment',
+      },
+    ],
   },
   {
     versionKey: false,

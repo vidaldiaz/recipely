@@ -1,6 +1,7 @@
 const Recipe = require('../models/Recipe')
 const User = require('../models/User')
 const Inventory = require('../models/Inventory')
+const Comment = require('../models/Comment')
 const passport = require('../config/passport')
 
 exports.addRecipesView = (req, res) => res.render('recipes/addRecipes')
@@ -83,8 +84,9 @@ exports.showMatchedRecipes = async (req, res) => {
 
 exports.showRecipeFullDetails = async (req, res) => {
   const { id } = req.params
+  let comments = await Comment.find().populate('user')
   const currentRecipe = await Recipe.findById(id)
-  res.render('recipes/detailedViewRecipe', currentRecipe)
+  res.render('recipes/detailedViewRecipe', { currentRecipe, comments })
 }
 
 exports.deleteRecipe = async (req, res) => {

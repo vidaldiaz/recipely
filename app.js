@@ -73,8 +73,10 @@ app.locals.title = 'Express - Generated with IronGenerator'
 const index = require('./routes/index')
 const inventory = require('./routes/inventory')
 const recipes = require('./routes/recipes')
+const comments = require('./routes/comments')
 app.use('/recipes', recipes)
 app.use('/inventory', inventory)
+app.use('/comments', comments)
 app.use('/', index)
 
 module.exports = app
