@@ -3,10 +3,10 @@ const configLocalMongoose = require('passport-local-mongoose')
 
 const recipeSchema = new Schema(
   {
-    user:{
+    user: {
       type: Schema.Types.ObjectId,
-      ref:'User'
-    }
+      ref: 'User',
+    },
     recipeName: String,
     recipeSite: {
       type: String,
@@ -23,5 +23,5 @@ const recipeSchema = new Schema(
   }
 )
 
-recipeSchema.plugin(configLocalMongoose, { usernameField: 'email' })
+recipeSchema.plugin(configLocalMongoose)
 module.exports = model('Recipe', recipeSchema)

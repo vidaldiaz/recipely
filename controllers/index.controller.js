@@ -1,5 +1,6 @@
 const User = require('../models/User')
 const Inventory = require('../models/Inventory')
+const Recipes = require('../models/Recipe')
 const passport = require('../config/passport')
 
 exports.loginView = (req, res) => res.render('login')
@@ -13,11 +14,13 @@ exports.signupProcess = async (req, res) => {
 }
 
 exports.loginProcess = passport.authenticate('local', {
-  successRedirect: '/',
+  successRedirect: '/profile',
   failureRedirect: '/login',
 })
 
 exports.profileView = async (req, res) => {
   let items = await Inventory.find()
-  res.render('profile', { items })
+  let recipes = await Recipes.find()
+  console.log(recipes)
+  res.render('profile', { items, recipes })
 }

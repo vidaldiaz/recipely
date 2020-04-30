@@ -1,6 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const passport = require('passport')
+const isAuth = require('../middlewares/isAuth')
 
 const {
   loginView,
@@ -10,6 +11,8 @@ const {
   showPlaces,
   profileView,
 } = require('../controllers/index.controller')
+
+const { addRecipesPost } = require('../controllers/recipes.controller')
 
 /* GET home page */
 router.get('/', (req, res, next) => {
@@ -31,6 +34,6 @@ router.get(
   })
 )
 
-router.get('/profile', profileView)
+router.get('/profile', isAuth, profileView)
 
 module.exports = router

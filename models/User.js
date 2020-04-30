@@ -6,6 +6,12 @@ const userSchema = new Schema(
     name: String,
     email: String,
     facebookId: String,
+    recipes: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: 'Recipe',
+      },
+    ],
   },
   {
     versionKey: false,
