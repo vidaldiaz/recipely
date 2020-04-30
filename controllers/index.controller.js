@@ -9,8 +9,8 @@ exports.signupView = (req, res) => res.render('signup')
 exports.signupProcess = async (req, res) => {
   const { name, email, password } = req.body
   console.log(req.body)
-  await User.register({ name, email, places: [] }, password)
-  res.redirect('/')
+  await User.register({ name, email }, password)
+  res.redirect('/profile')
 }
 
 exports.loginProcess = passport.authenticate('local', {
