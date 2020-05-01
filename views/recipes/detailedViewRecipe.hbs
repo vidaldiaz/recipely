@@ -1,29 +1,39 @@
-<h2>{{currentRecipe.recipeName}}</h2>
+<nav class="navbar fixed-top navbar-light bg-warning" style="margin-bottom: 50px;">
+  <a class="navbar-brand" href="/profile">
+    <img src="/images/LOGO120.png" width="50" height="50" class="d-inline-block align-top" alt=""
+      style="position: relative; left:10px">
+  </a>
+</nav>
 
 
-<div class="detailed View">
-  <img src="{{currentRecipe.recipeImage}}" alt="recipe image">
-  <h3>Ingredients:</h3>
-  <ul>
-    {{#each currentRecipe.ingredients}}
-    <li>{{this}}</li>
+<div class="classBody">
+
+  <h1 class="dishName">{{currentRecipe.recipeName}}</h1>
+
+
+  <div class="detailed View">
+    <img src="{{currentRecipe.recipeImage}}" alt="recipe image" class="recipe-image">
+    <div class="components">
+      <h3>Ingredients:</h3>
+      <ul class="recipe-ingredients">
+        {{#each currentRecipe.ingredients}}
+        <li class="ingredient">{{this}}</li>
+        {{/each}}
+      </ul>
+    </div>
+    <a href="{{currentRecipe.recipeSite}}" class="instructions">Click to Get Instructions</a>
+    <a href="/comments/add/{{currentRecipe._id}}" class="add-comment"><button>Add Comment</button></a>
+  </div>
+
+  <div class="user-comments">
+    {{#each comments}}
+    <div class="comment">
+      <p>{{this.comment}}</p>
+      <p>{{this.user.name}}</p>
+    </div>
+    <a href="/comments/edit/{{this.id}}"><button>Edit</button></a>
+    <a href="/comments/delete/{{this.id}}"><button>Delete</button></a>
+
     {{/each}}
-  </ul>
-  <a href="{{currentRecipe.recipeSite}}">Click to Get Instructions</a>
-  <br>
-  <br>
-  <a href="/comments/add/{{currentRecipe._id}}"><button>Add Comment</button></a>
-</div>
-<br>
-
-<div>
-  {{#each comments}}
-  <p>{{this.comment}}</p>
-  <p>{{this.user.name}}</p>
-  {{#ifCond ../loggedUser comments.user._id}}
-  <a href="/comments/edit/{{this.id}}"><button>Edit</button></a>
-  <br>
-  <a href="/comments/delete/{{this.id}}"><button>Delete</button></a>
-  {{/ifCond}}
-  {{/each}}
+  </div>
 </div>

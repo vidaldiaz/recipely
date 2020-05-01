@@ -1,20 +1,43 @@
-<form action="/recipes/editRecipes/{{recipes._id}}" method="POST" enctype="multipart/form-data">
-  <label for="recipeName">Name</label>
-  <input type="text" name="recipeName" value="{{recipes.recipeName}}">
-  <br>
-  <br>
-  <label for="ingredients">Ingredients</label>
-  <input type="text" name="ingredients" value="{{recipes.ingredients}}">
-  <br>
-  <br>
-  <label for="recipeSteps">Steps</label>
-  <br>
-  <textarea name="recipeSteps" cols="40" rows="15">{{recipes.recipeSteps}}</textarea>
-  <br>
-  <br>
-  <label for="recipeImage">Image</label>
-  <input type="file" name="recipeImage">
-  <br>
-  <br>
-  <button type="submit">Upload</button>
-</form>
+<nav class="navbar fixed-top navbar-light bg-warning" style="margin-bottom: 50px;">
+  <a class="navbar-brand" href="/profile">
+    <img src="/images/LOGO120.png" width="50" height="50" class="d-inline-block align-top" alt=""
+      style="position: relative; left:10px">
+  </a>
+</nav>
+
+
+
+<div class="pageBody">
+  <div class="wrapper fadeInDown">
+    <div id="formContent">
+      <div class="fadeIn first">
+        <h3 id="icon">Made your recipe better? SHARE IT!</h3>
+        <br>
+      </div>
+      <form action="/recipes/editRecipes/{{recipes._id}}" method="POST" enctype="multipart/form-data">
+        <label for="recipeName">Name</label>
+        <input type="text" name="recipeName" value="{{recipes.recipeName}}">
+        <br>
+        <br>
+        <label for="ingredients">Ingredients</label>
+        <input type="text" name="ingredients" value="{{recipes.ingredients}}">
+        <br>
+        <br>
+        <label for="recipeSteps">Steps</label>
+        <br>
+        <textarea name="recipeSteps" cols="40" rows="5">{{recipes.recipeSteps}}</textarea>
+        <br>
+        <br>
+        <label for="recipeImage">Image</label>
+        <input type="file" name="recipeImage">
+        <br>
+        <br>
+        <button type="submit">Upload</button>
+      </form>
+      <div id="formFooter">
+        <p>"To me, there's no great chef without a great team."</p>
+      </div>
+
+    </div>
+  </div>
+</div>

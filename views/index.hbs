@@ -1,6 +1,54 @@
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
+{{!-- <h1>{{title}}</h1>
+<p>Welcome to {{title}}</p> --}}
 
-<a href="/login">Login</a>
-<a href="/signup">Signup</a>
-<a href="/logout">Log Out</a
+
+
+
+{{!-- <a href="/logout"><button type="button" class="btn btn-danger" style="background-color: #f04e43;">Logout</button></a> --}}
+
+
+
+<div id="indexBody">
+  <div class="container">
+
+    <img src="/images/LOGO460.png" alt="">
+    <div class="button-container">
+      <a href="/login"><button type="button" class="btn btn-danger buttons">Login</button></a>
+      <a href="/signup"><button type="button" class="btn btn-danger buttons">Signup</button></a>
+    </div>
+  </div>
+  <style>
+    #indexBody {
+      background-image: url("/images/table13.jpg");
+      height: 766px;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+
+    }
+
+    .container {
+      display: flex;
+      justify-content: flex-end;
+      height: auto;
+      align-items: center;
+      flex-wrap: wrap;
+      width: min-content;
+      position: relative;
+      left: 360px;
+      top: 40px;
+    }
+
+    .buttons {
+      background-color: #f04e43;
+      width: 130px;
+      font-size: 20px;
+      margin: 10px;
+    }
+
+    .button-container {
+      margin-top: 40px;
+      position: relative;
+      right: 85px;
+    }
+  </style>

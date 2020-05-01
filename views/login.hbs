@@ -1,10 +1,25 @@
-<h1>Login</h1>
+<div class="pageBody">
+  <div class="wrapper fadeInDown">
+    <div id="formContent">
+      <div class="fadeIn first">
+        <h1 id="icon">Login</h1>
+      </div>
+      <form action="/login" method="POST">
+        <label for="email">Email</label>
+        <input type="email" name="email">
+        <br>
+        <br>
+        <label for="Password" style="position: relative; right: 17px;">Password</label>
+        <input type="password" name="password" style="position: relative; right: 15px;">
+        <br>
+        <br>
+        <input type="submit" value="Log In">
+      </form>
+      <div id="formFooter">
+        <p>Don't have an account? <a href="/signup">Sign Up</a></p>
+        <a href="/auth/facebook"><img src="/images/facebookLogo.png" alt="Facebook Logo Login" id="facebook"></a>
+      </div>
 
-<form action="/login" method="POST">
-  <input type="email" name="email" placeholder="name@domain.com">
-  <input type="password" name="password">
-  <input type="submit" value="Log In">
-</form>
-
-<br><br>
-<a href="/auth/facebook"><img src="../public/images/faceLogo.png" alt="Facebook Logo Login"></a>
+    </div>
+  </div>
+</div>

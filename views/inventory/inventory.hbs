@@ -1,6 +1,26 @@
-<form method="POST" action="/inventory">
-  <input type="text" id="inventoryInput" name="products" placeholder="Add a product">
-  <button type="button" onclick="inventoryList()">Add Item</button>
-  <ul id="inventoryList"></ul>
-  <button type="submit">Create Grocery List</button>
-</form>
+<nav class="navbar fixed-top navbar-light bg-warning" style="margin-bottom: 50px;">
+  <a class="navbar-brand" href="/profile">
+    <img src="/images/LOGO120.png" width="50" height="50" class="d-inline-block align-top" alt=""
+      style="position: relative; left:10px">
+  </a>
+</nav>
+
+<div class="pageBody">
+  <div class="wrapper fadeInDown">
+    <div id="formContent">
+      <div class="fadeIn first">
+        <h1 id="icon">Hungry?</h1>
+      </div>
+      <form method="POST" action="/inventory">
+        <input type="text" id="inventoryInput" name="products" placeholder="Add a product">
+        <button type="button" onclick="inventoryList()">Add Item</button>
+        <ul id="inventoryList"></ul>
+        <button type="submit" style="margin-bottom:15px;">Create Grocery List</button>
+      </form>
+      <div id="formFooter">
+        <p>"There is no sincerer love than the love of food"</p>
+      </div>
+
+    </div>
+  </div>
+</div>
