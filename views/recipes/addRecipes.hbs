@@ -1,20 +1,43 @@
-<form action="/recipes/addRecipes" method="POST" enctype="multipart/form-data">
-  <label for="recipeName">Name</label>
-  <input type="text" name="recipeName">
-  <br>
-  <br>
-  <label for="ingredients">Ingredients</label>
-  <input type="text" name="ingredients">
-  <br>
-  <br>
-  <label for="recipeSteps">Steps</label>
-  <br>
-  <textarea name="recipeSteps" cols="40" rows="15"></textarea>
-  <br>
-  <br>
-  <label for="recipeImage">Image</label>
-  <input type="file" name="recipeImage">
-  <br>
-  <br>
-  <button type="submit">Upload</button>
-</form>
+<nav class="navbar fixed-top navbar-light bg-warning" style="margin-bottom: 50px;">
+  <a class="navbar-brand" href="/profile">
+    <img src="/images/LOGO120.png" width="50" height="50" class="d-inline-block align-top" alt=""
+      style="position: relative; left:10px">
+  </a>
+</nav>
+
+
+
+<div class="pageBody">
+  <div class="wrapper fadeInDown">
+    <div id="formContent">
+      <div class="fadeIn first">
+        <h1 id="icon">Share your cooking knowledge</h1>
+        <br>
+      </div>
+      <form action="/recipes/addRecipes" method="POST" enctype="multipart/form-data">
+        <label for="recipeName">Name</label>
+        <input type="text" name="recipeName">
+        <br>
+        <br>
+        <label for="ingredients">Ingredients</label>
+        <input type="text" name="ingredients">
+        <br>
+        <br>
+        <label for="recipeSteps">Steps</label>
+        <br>
+        <textarea name="recipeSteps" cols="40" rows="15"></textarea>
+        <br>
+        <br>
+        <label for="recipeImage">Image</label>
+        <input type="file" name="recipeImage">
+        <br>
+        <br>
+        <button type="submit">Upload</button>
+      </form>
+      <div id="formFooter">
+        <p>"I always say that I don't believe I'm a chef. I try to be a storyteller."</p>
+      </div>
+
+    </div>
+  </div>
+</div>

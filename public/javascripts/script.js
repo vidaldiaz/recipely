@@ -13,11 +13,14 @@ function inventoryList() {
   let newItem = document.createElement('li')
   let newInput = document.createElement('input')
   let newButton = document.createElement('button')
+  let newList = document.createElement('ul')
+  let newProfileList = document.querySelector('#profileList')
   newItem.appendChild(newInput)
   newItem.appendChild(newButton)
+  newList.appendChild(newItem)
   newButton.innerHTML = 'Delete'
   newInput.value = input
-  document.querySelector('#inventoryList').appendChild(newItem)
+  let uList = document.querySelector('#inventoryList').appendChild(newItem)
   newItem.setAttribute('name', 'product')
   newInput.setAttribute('value', input)
   newInput.setAttribute('name', 'products')
@@ -28,3 +31,9 @@ function inventoryList() {
   const buttons = document.querySelectorAll('.btn.btn-remove')
   buttons.forEach((btn) => (btn.onclick = () => btn.parentNode.remove()))
 }
+
+function removeProduct() {
+  const buttons = document.querySelectorAll('.btn.btn-remove')
+  buttons.forEach((btn) => (btn.onclick = () => btn.parentNode.remove()))
+}
+removeProduct()

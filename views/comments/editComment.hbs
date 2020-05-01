@@ -1,6 +1,30 @@
-<form action="/comments/edit/{{id}}" method="POST">
-  <textarea name="comment" cols="50" rows="10"
-    placeholder="Write down what you think about this delicious meal">{{comment}}</textarea>
-  <br>
-  <button type="submit">Edit Comment</button>
-</form>
+<nav class="navbar fixed-top navbar-light bg-warning" style="margin-bottom: 50px;">
+  <a class="navbar-brand" href="/profile">
+    <img src="/images/LOGO120.png" width="50" height="50" class="d-inline-block align-top" alt=""
+      style="position: relative; left:10px">
+  </a>
+</nav>
+
+
+
+
+<div class="pageBody">
+  <div class="wrapper fadeInDown">
+    <div id="formContent">
+      <div class="fadeIn first">
+        <h1 id="icon">Changed your mind?</h1>
+        <br>
+      </div>
+      <form action="/comments/edit/{{id}}" method="POST">
+        <textarea name="comment" cols="50" rows="10"
+          placeholder="Write down what you think about this delicious meal">{{comment}}</textarea>
+        <br>
+        <button type="submit">Edit Comment</button>
+      </form>
+      <div id="formFooter">
+        <p>Remember to be nice!</p>
+      </div>
+
+    </div>
+  </div>
+</div>

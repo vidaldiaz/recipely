@@ -1,10 +1,26 @@
-<h1>Sign Up</h1>
+<div class="pageBody">
+  <div class="wrapper fadeInDown">
+    <div id="formContent">
+      <div class="fadeIn first">
+        <h1 id="icon">Sign Up</h1>
+        <br>
+      </div>
+      <form action="/signup" method="POST">
+        <input type="name" name="name" placeholder="Full Name">
+        <br>
+        <br>
+        <input type="email" name="email" placeholder="name@domain.com">
+        <br>
+        <br>
+        <input type="password" name="password" placeholder="Password">
+        <br>
+        <br>
+        <input type="submit" value="Sign Up">
+      </form>
+      <div id="formFooter">
+        <a href="/auth/facebook">Sign Up with Facebook</a>
+      </div>
 
-<form action="/signup" method="POST">
-  <input type="name" name="name" placeholder="Name Surname">
-  <input type="email" name="email" placeholder="name@domain.com">
-  <input type="password" name="password">
-  <input type="submit" value="Sign Up">
-</form>
-<br><br>
-<a href="/auth/facebook">Sign Up with Facebook</a>
+    </div>
+  </div>
+</div>
