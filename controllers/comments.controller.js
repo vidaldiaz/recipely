@@ -11,7 +11,6 @@ exports.addCommentPost = async (req, res) => {
   const user = req.user.id
   const { comment } = req.body
   const recipe = req.params.id
-  console.log(req.params)
   const newComment = await Comment.create({
     comment,
     user: req.user.id,
@@ -32,13 +31,11 @@ exports.editCommentPost = async (req, res) => {
     'recipe',
     '_id'
   )
-  console.log(comment)
   res.redirect(`/recipes/details/${comment.recipe._id}`)
 }
 
 exports.deleteComment = async (req, res) => {
   const recipeId = await Comment.findById(req.params.id).populate('recipe', 'id')
-  console.log(recipeId)
   await Comment.findByIdAndDelete(req.params.id)
   res.redirect(`/recipes/details/${recipeId.recipe._id}`)
 }

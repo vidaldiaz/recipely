@@ -13,7 +13,6 @@ passport.use(
       profileFields: ['id', 'email', 'gender', 'link', 'locale', 'name'],
     },
     async (accessToken, refreshToken, profile, cb) => {
-      console.log(profile)
       const user = await User.findOne({ facebookId: profile.id })
       if (!user) {
         const userCreated = await User.create({

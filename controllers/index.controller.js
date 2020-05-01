@@ -8,7 +8,6 @@ exports.signupView = (req, res) => res.render('signup')
 
 exports.signupProcess = async (req, res) => {
   const { name, email, password } = req.body
-  console.log(req.body)
   await User.register({ name, email }, password)
   res.redirect('/profile')
 }
@@ -19,12 +18,9 @@ exports.loginProcess = passport.authenticate('local', {
 })
 
 exports.profileView = async (req, res) => {
-  console.log(req.user)
   const { name, _id } = req.user
   const currentUserInventories = await Inventory.find({ user: _id })
-  console.log(currentUserInventories)
   let currentUserRecipes = await Recipes.find({ user: _id })
-  console.log(currentUserRecipes)
   res.render('profile', { currentUserInventories, currentUserRecipes, name })
 }
 

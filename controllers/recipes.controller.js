@@ -44,7 +44,6 @@ exports.showMatchedRecipes = async (req, res) => {
   let fullMatches = []
   let semiMatches = []
 
-  console.log(req.params)
   const { id } = req.params
   const currentRecipe = await Inventory.findById(id)
   const ingredientsArray = currentRecipe.products
@@ -53,15 +52,11 @@ exports.showMatchedRecipes = async (req, res) => {
     ingredientsArray[i] = ingredientsArray[i].toLowerCase()
   }
 
-  console.log(`Ingredientes a Buscar: ${ingredientsArray}`)
-
   const allRecipes = await Recipe.find({})
   for (let i = 0; i < allRecipes.length; i++) {
     for (let j = 0; j < allRecipes[i].ingredients.length; j++) {
-      //console.log(allRecipes[i].ingredients[j])
       for (let k = 0; k < ingredientsArray.length; k++) {
         if (ingredientsArray[k] === allRecipes[i].ingredients[j]) {
-          console.log(allRecipes[i]._id)
           fullMatches.push(allRecipes[i])
           counter++
         } else if (allRecipes[i].ingredients[j].includes(ingredientsArray[k])) {
@@ -70,9 +65,6 @@ exports.showMatchedRecipes = async (req, res) => {
       }
     }
   }
-  //console.log(counter)
-  //console.log(fullMatches)
-  //console.log(semiMatches)
 
   let fullMatchesUnique = [...new Set(fullMatches)]
   let semiMatchesUnique = [...new Set(semiMatches)]
