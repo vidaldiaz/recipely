@@ -96,7 +96,9 @@ exports.showRecipeFullDetails = async (req, res) => {
       model: 'User',
     },
   })
-  console.log(currentRecipe)
+  currentRecipe.comments.forEach((comment) => {
+    comment.isOwner = req.user.id == comment.user._id
+  })
   res.render('recipes/detailedViewRecipe', {
     currentRecipe,
     comments: currentRecipe.comments,
@@ -107,24 +109,3 @@ exports.deleteRecipe = async (req, res) => {
   await Recipe.findByIdAndDelete(req.params.id)
   res.redirect('/profile')
 }
-
-// ;[
-//   {
-//     _id: '5eabeb058b68855196db7366',
-//     comment: 'Primer Comentario!',
-//     user: {
-//       recipes: [],
-//       inventories: ['5eabeaf38b68855196db7365'],
-//       comments: ['5eabeb058b68855196db7366'],
-//       _id: '5eabead78b68855196db7364',
-//       name: 'sapo',
-//       email: 'sapo@sapo.com',
-//       createdAt: '2020-05-01T09:24:39.675Z',
-//       updatedAt: '2020-05-01T09:25:25.552Z',
-//     },
-//     recipe: '5ea79e3badc94e26b6fd95f0',
-//     date: '2020-05-01T09:25:25.544Z',
-//     __v: 0,
-//   },
-// ]
-// --

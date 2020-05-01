@@ -1,7 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap");
 body {
   margin: 0px;
   padding: 0px;
-  font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif; }
+  font: FredokaOne;
+  font-family: 'Kalam', cursive;
+  background-color: lightgoldenrodyellow; }
 
 a {
   color: #00b7ff; }
@@ -31,7 +34,7 @@ a {
   z-index: 1; }
 
 .pageBody {
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
   height: 100vh; }
 
 #profile-body.recipe-container {
@@ -70,8 +73,12 @@ a {
   position: relative;
   right: 20px; }
 
+#profileList a {
+  margin-top: 8%; }
+
 .inventoryButton {
-  margin: 10px 0; }
+  margin: 10px 0;
+  width: 100%; }
 
 li {
   text-align: center; }
@@ -98,7 +105,7 @@ li {
   left: 20px;
   top: 3px;
   font-size: 19px;
-  color: #F7C133;
+  color: #f7c133;
   margin-right: 5px; }
 
 .result {
@@ -139,7 +146,7 @@ hr {
   clear: both;
   display: block;
   width: 100%;
-  background-color: #F7C133;
+  background-color: #f7c133;
   height: 1px; }
 
 .classBody {
@@ -250,8 +257,8 @@ h2 {
   text-align: center;
   border-radius: 0 0 10px 10px; }
 
-input[type=submit],
-input[type=button] {
+input[type='submit'],
+input[type='button'] {
   background-color: #f04e43;
   border: none;
   color: white;
@@ -265,12 +272,12 @@ input[type=button] {
   border-radius: 5px 5px 5px 5px;
   margin: 5px 20px 40px 20px; }
 
-input[type=submit],
-input[type=button]:hover {
+input[type='submit'],
+input[type='button']:hover {
   background-color: #ef7a72; }
 
-input[type=submit],
-input[type=button]:active {
+input[type='submit'],
+input[type='button']:active {
   transform: scale(0.95); }
 
 .fadeInDown {

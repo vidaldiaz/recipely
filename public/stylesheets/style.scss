@@ -1,7 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap');
+
 body {
   margin: 0px;
   padding: 0px;
-  font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
+  //font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
+  font-family: 'Kalam', cursive;
+  background-color: lightgoldenrodyellow;
 }
 
 a {
@@ -38,7 +42,7 @@ a {
 }
 
 .pageBody {
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
   height: 100vh;
 }
 
@@ -83,10 +87,13 @@ a {
   position: relative;
   right: 20px;
 }
+#profileList a {
+  margin-top: 8%;
+}
 
 .inventoryButton {
-
   margin: 10px 0;
+  width: 100%;
 }
 
 li {
@@ -118,7 +125,7 @@ li {
   left: 20px;
   top: 3px;
   font-size: 19px;
-  color: #F7C133;
+  color: #f7c133;
   margin-right: 5px;
 }
 
@@ -166,7 +173,7 @@ hr {
   clear: both;
   display: block;
   width: 100%;
-  background-color: #F7C133;
+  background-color: #f7c133;
   height: 1px;
 }
 
@@ -240,10 +247,8 @@ hr {
   justify-content: space-evenly;
 }
 
-
 #profile-body.inventory-container {
   width: 30%;
-
 }
 
 a {
@@ -267,8 +272,6 @@ h2 {
   width: 120px;
   height: 100px;
 }
-
-
 
 /* STRUCTURE */
 
@@ -302,9 +305,8 @@ h2 {
   border-radius: 0 0 10px 10px;
 }
 
-
-input[type=submit],
-input[type=button] {
+input[type='submit'],
+input[type='button'] {
   background-color: #f04e43;
   border: none;
   color: white;
@@ -319,16 +321,15 @@ input[type=button] {
   margin: 5px 20px 40px 20px;
 }
 
-input[type=submit],
-input[type=button]:hover {
+input[type='submit'],
+input[type='button']:hover {
   background-color: #ef7a72;
 }
 
-input[type=submit],
-input[type=button]:active {
+input[type='submit'],
+input[type='button']:active {
   transform: scale(0.95);
 }
-
 
 .fadeInDown {
   animation-name: fadeInDown;

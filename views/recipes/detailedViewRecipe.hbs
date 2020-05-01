@@ -31,9 +31,10 @@
       <p>{{this.comment}}</p>
       <p>{{this.user.name}}</p>
     </div>
+    {{#if isOwner}}
     <a href="/comments/edit/{{this.id}}"><button>Edit</button></a>
     <a href="/comments/delete/{{this.id}}"><button>Delete</button></a>
-
+    {{/if}}
     {{/each}}
   </div>
 </div>
