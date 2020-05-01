@@ -2,12 +2,40 @@
 body {
   margin: 0px;
   padding: 0px;
-  font: FredokaOne;
   font-family: 'Kalam', cursive;
-  background-color: lightgoldenrodyellow; }
+  background-color: #fff; }
 
 a {
   color: #00b7ff; }
+
+#indexBody {
+  background-image: url("/images/table13.jpg");
+  height: 766px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; }
+
+.container {
+  display: flex;
+  justify-content: flex-end;
+  height: auto;
+  align-items: center;
+  flex-wrap: wrap;
+  width: min-content;
+  position: relative;
+  left: 360px;
+  top: 40px; }
+
+.buttons {
+  background-color: #f04e43;
+  width: 130px;
+  font-size: 20px;
+  margin: 10px; }
+
+.button-container {
+  margin-top: 40px;
+  position: relative;
+  right: 85px; }
 
 .profile {
   border: 1px solid black;
@@ -34,11 +62,12 @@ a {
   z-index: 1; }
 
 .pageBody {
-  font-family: 'Poppins', sans-serif;
   height: 100vh; }
 
-#profile-body.recipe-container {
-  width: 60%; }
+.recipe-container {
+  width: 60%;
+  display: flex;
+  flex-direction: column; }
 
 .title-container {
   display: flex;
@@ -52,14 +81,20 @@ a {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  padding: 50px 100px;
+  padding: 15px 100px;
   position: relative;
   top: 50px; }
+
+.white-background {
+  background-color: white;
+  width: 290px;
+  height: 68px;
+  border-radius: 5px; }
 
 .inventory-card {
   width: 18rem;
   position: relative;
-  top: 200px;
+  top: 212px;
   left: 20px;
   display: flex;
   align-items: center; }
@@ -105,13 +140,16 @@ li {
   left: 20px;
   top: 3px;
   font-size: 19px;
-  color: #f7c133;
+  color: #f04e43;
   margin-right: 5px; }
 
 .result {
   text-align: center;
   position: relative;
   top: 70px; }
+
+.found-recipes {
+  color: black; }
 
 .fullMatches {
   position: relative;
@@ -198,7 +236,9 @@ hr {
   margin: 10px 0; }
 
 .add-recipe {
-  margin-top: 15px; }
+  margin-top: 15px;
+  display: flex;
+  justify-content: center; }
 
 .inventoryList {
   height: 40%; }
@@ -223,7 +263,7 @@ h2 {
   text-transform: uppercase;
   display: inline-block;
   margin: 40px 8px 10px 8px;
-  color: #cccccc; }
+  color: black; }
 
 #facebook {
   width: 120px;

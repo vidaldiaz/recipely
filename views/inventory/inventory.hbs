@@ -3,6 +3,7 @@
     <img src="/images/LOGO120.png" width="50" height="50" class="d-inline-block align-top" alt=""
       style="position: relative; left:10px">
   </a>
+  <a href="/logout"><button type="button" class="btn btn-outline-danger my-2 my-sm-0">Logout</button></a>
 </nav>
 
 <div class="pageBody">
@@ -13,9 +14,9 @@
       </div>
       <form method="POST" action="/inventory">
         <input type="text" id="inventoryInput" name="products" placeholder="Add a product">
-        <button type="button" onclick="inventoryList()">Add Item</button>
+        <button type="button" onclick="inventoryList()" class="btn btn-outline-warning">Add Item</button>
         <ul id="inventoryList"></ul>
-        <button type="submit" style="margin-bottom:15px;">Create Grocery List</button>
+        <button type="submit" style="margin-bottom:15px;" class="btn btn-outline-warning">Create Grocery List</button>
       </form>
       <div id="formFooter">
         <p>"There is no sincerer love than the love of food"</p>

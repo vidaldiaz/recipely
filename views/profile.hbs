@@ -3,49 +3,68 @@
     <img src="/images/LOGO120.png" width="50" height="50" class="d-inline-block align-top" alt=""
       style="position: relative; left:10px">
   </a>
+  <a href="/logout"><button type="button" class="btn btn-outline-danger my-2 my-sm-0">Logout</button></a>
 </nav>
 
-<h1 class="welcome">Welcome {{name}}</h1>
+<div class="profile-body">
+  <h1 class="welcome">Welcome {{name}}</h1>
 
-<div id="profile-body">
-  <div class="cards-container inventory-container">
-    <div class="card inventory-card" style="width: 18rem;">
-      <p>Create a list and search for recipes</p>
-      <div class="card-body ">
-        <ul id="profileList">
-          {{#each currentUserInventories}}
-          {{#each this.products}}
-          <li>{{this}}</li>
-          {{/each}}
-          <a href="/inventory/edit/{{this._id}}"><button class="btn btn-outline-warning"> Edit</button></a>
-          <a href="/recipes/showRecipes/{{this._id}}"><button class="btn btn-outline-warning">Search
-              Recipes</button></a>
-          <hr class="underline">
-          {{/each}}
-        </ul>
-        <a href="/inventory" class="btn btn-primary inventoryButton">Create Ingredients List</a>
-      </div>
-    </div>
-  </div>
-
-
-  <div class="cards-container recipe-container">
-    <div class="title-container">
-      <h2>Share your recipes with the world!</h2>
-      <a href="/recipes/addRecipes" class="add-recipe"><button>Add Recipe</button></a>
-    </div>
-    <div class="container-in-recipe">
-      {{#each currentUserRecipes}}
-      <div class="card" style="width: 18rem; margin-bottom:55px;">
-        <img class="card-img-top" src="{{this.recipePath}}" alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title">{{this.recipeName}}</h5>
-          <p class="card-text">Ingredients: {{this.ingredients}}</p>
-          <a href="/recipes/editRecipes/{{this._id}}"><button class="inventories-btn"> Edit</button></a>
-          <a href="/recipes/delete/{{this._id}}"><button class="inventories-btn"> Delete</button></a>
+  <div id="profile-body">
+    <div class="cards-container inventory-container">
+      <div class="card inventory-card" style="width: 18rem;">
+        <p>Create a list and search for recipes</p>
+        <div class="card-body ">
+          <ul id="profileList">
+            {{#each currentUserInventories}}
+            {{#each this.products}}
+            <li>{{this}}</li>
+            {{/each}}
+            <a href="/inventory/edit/{{this._id}}"><button class="btn btn-outline-warning"> Edit</button></a>
+            <a href="/recipes/showRecipes/{{this._id}}"><button class="btn btn-outline-warning">Search
+                Recipes</button></a>
+            <hr class="underline">
+            {{/each}}
+          </ul>
+          <a href="/inventory" class="btn btn-primary inventoryButton">Create Ingredients List</a>
         </div>
       </div>
-      {{/each}}
+    </div>
+
+
+    <div class="cards-container recipe-container">
+      <div class="title-container">
+        <h2>Share your recipes with the world!</h2>
+        <div class="white-background">
+          <a href="/recipes/addRecipes" class="add-recipe"><button class="btn btn-outline-warning">Add
+              Recipe</button></a>
+        </div>
+      </div>
+      <div class="container-in-recipe">
+        {{#each currentUserRecipes}}
+        <div class="card" style="width: 18rem; margin-bottom:55px;">
+          <img class="card-img-top" src="{{this.recipePath}}" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">{{this.recipeName}}</h5>
+            <p class="card-text">Ingredients: {{this.ingredients}}</p>
+            <a href="/recipes/editRecipes/{{this._id}}"><button class="inventories-btn btn-outline-warning">
+                Edit</button></a>
+            <a href="/recipes/delete/{{this._id}}"><button class="inventories-btn btn-outline-warning">
+                Delete</button></a>
+          </div>
+        </div>
+        {{/each}}
+      </div>
     </div>
   </div>
 </div>
+
+<style>
+  .profile-body {
+    background-image: url("/images/knife.jpg");
+    height: 766px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+  }
+</style>

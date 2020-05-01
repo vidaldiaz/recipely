@@ -3,6 +3,7 @@
     <img src="/images/LOGO120.png" width="50" height="50" class="d-inline-block align-top" alt=""
       style="position: relative; left:10px">
   </a>
+  <a href="/logout"><button type="button" class="btn btn-outline-danger my-2 my-sm-0">Logout</button></a>
 </nav>
 
 <div class="pageBody">
@@ -14,22 +15,23 @@
       </div>
       <form method="POST" action="/inventory/edit/{{items._id}}">
         <input type="text" id="inventoryInput" name="products" placeholder="Add a product">
-        <button type="button" onclick="inventoryList()">Add Item</button>
+        <button type="button" onclick="inventoryList()" class="btn btn-outline-warning">Add Item</button>
         <ul id="inventoryList" style="list-style-type: none;">
           {{#each items}}
           {{#each this.products}}
           <li>
             <input type="text" value="{{this}}" name="products">
-            <button class="btn btn-remove">Delete</button>
+            <button class="btn btn-remove btn-outline-warning">Delete</button>
           </li>
           {{/each}}
           {{/each}}
         </ul>
-        <button type="submit">Update Grocery List</button>
+        <button type="submit" class="btn btn-outline-warning">Update Grocery List</button>
       </form>
       <br>
       <form action="/inventory/delete/{{items._id}}" method="POST">
-        <a href="/inventory/delete/{{items._id}}"></a><button style="margin-bottom: 20px;">Delete All</button></a>
+        <a href="/inventory/delete/{{items._id}}"></a><button style="margin-bottom: 20px;"
+          class="btn btn-outline-warning">Delete All</button></a>
       </form>
       <div id="formFooter">
         <p>The heart wants what the heart wants. (Cookies. It’s always cookies.)</p>

@@ -3,8 +3,8 @@
     <img src="/images/LOGO120.png" width="50" height="50" class="d-inline-block align-top" alt=""
       style="position: relative; left:10px">
   </a>
+  <a href="/logout"><button type="button" class="btn btn-outline-danger my-2 my-sm-0">Logout</button></a>
 </nav>
-
 
 <div class="classBody">
 
@@ -22,7 +22,8 @@
       </ul>
     </div>
     <a href="{{currentRecipe.recipeSite}}" class="instructions">Click to Get Instructions</a>
-    <a href="/comments/add/{{currentRecipe._id}}" class="add-comment"><button>Add Comment</button></a>
+    <a href="/comments/add/{{currentRecipe._id}}" class="add-comment"><button class="btn btn-outline-warning">Add
+        Comment</button></a>
   </div>
 
   <div class="user-comments">
@@ -32,8 +33,8 @@
       <p>{{this.user.name}}</p>
     </div>
     {{#if isOwner}}
-    <a href="/comments/edit/{{this.id}}"><button>Edit</button></a>
-    <a href="/comments/delete/{{this.id}}"><button>Delete</button></a>
+    <a href="/comments/edit/{{this.id}}"><button class="btn btn-outline-warning">Edit</button></a>
+    <a href="/comments/delete/{{this.id}}"><button class="btn btn-outline-warning">Delete</button></a>
     {{/if}}
     {{/each}}
   </div>
