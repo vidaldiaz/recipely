@@ -29,8 +29,8 @@
   <div class="user-comments">
     {{#each comments}}
     <div class="comment">
-      <p>{{this.comment}}</p>
-      <p>{{this.user.name}}</p>
+      <p style="font-size: 1.3rem">{{this.comment}}</p>
+      <p style="color: gray;">by: @{{this.user.name}}</p>
     </div>
     {{#if isOwner}}
     <a href="/comments/edit/{{this.id}}"><button class="btn btn-outline-warning">Edit</button></a>
