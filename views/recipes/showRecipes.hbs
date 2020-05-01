@@ -1,26 +1,42 @@
-<h3>You ask for: </h3>
-{{#each ingredientsArray}}
-<span>{{this}} </span>
-{{/each}}
-
-<h2>We found {{counter}} recipes!</h2>
-
-
-<div class="fullMatches">
-  {{#each fullMatchesUnique}}
-  <img src="{{recipeImage}}" alt="recipe image">
-  <a href="/recipes/details/{{id}}">
-    <h5>{{recipeName}}</h5>
+<nav class="navbar fixed-top navbar-light bg-warning" style="margin-bottom: 50px;">
+  <a class="navbar-brand" href="/profile">
+    <img src="/images/LOGO120.png" width="50" height="50" class="d-inline-block align-top" alt=""
+      style="position: relative; left:10px">
   </a>
+</nav>
 
-  <hr>
+
+<div class="asked-for">
+  <h3>You asked for: </h3>
+  {{#each ingredientsArray}}
+  <span class="ingredient-result">{{this}} </span>
   {{/each}}
 </div>
 
-<h4>Related Recipes</h4>
-<div class="semiMatches">
+<div class="result">
+  <h2>We found {{counter}} recipes!</h2>
+</div>
 
-  {{#each semiMatchesUnique}}
-  <a href="/recipes/details/{{id}}"><span>{{recipeName}}</span></a>
+<div class="fullMatches">
+
+  {{#each fullMatchesUnique}}
+  <div class="recipe-show">
+    <hr>
+    <img src="{{recipeImage}}" alt="recipe image" class="recipe-photo">
+    <a href="/recipes/details/{{id}}">
+      <h5 class="recipe-name">{{recipeName}}</h5>
+    </a>
+  </div>
   {{/each}}
+
+</div>
+
+<div class="related-matches">
+  <h4>Related Recipes</h4>
+  <div class="semiMatches">
+
+    {{#each semiMatchesUnique}}
+    <a href="/recipes/details/{{id}}"><span>{{recipeName}}</span></a>
+    {{/each}}
+  </div>
 </div>

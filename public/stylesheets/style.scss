@@ -105,6 +105,127 @@ li {
   left: 20px;
 }
 
+.asked-for {
+  display: flex;
+  position: relative;
+  left: 50px;
+  top: 90px;
+  width: fit-content;
+}
+
+.ingredient-result {
+  position: relative;
+  left: 20px;
+  top: 3px;
+  font-size: 19px;
+  color: #F7C133;
+  margin-right: 5px;
+}
+
+.result {
+  text-align: center;
+  position: relative;
+  top: 70px;
+}
+
+.fullMatches {
+  position: relative;
+  top: 85px;
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 20px;
+}
+
+.recipe-show {
+  flex: 1 0 31%;
+  margin: 10px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.recipe-photo {
+  width: 125px;
+  height: 101px;
+  margin-bottom: 15px;
+  padding-top: 15px;
+}
+
+.recipe-name {
+  text-align: center;
+}
+
+.related-matches {
+  position: relative;
+  top: 80px;
+  padding: 27px;
+}
+
+hr {
+  border: 0;
+  clear: both;
+  display: block;
+  width: 100%;
+  background-color: #F7C133;
+  height: 1px;
+}
+
+.classBody {
+  position: relative;
+  top: 100px;
+  left: 50px;
+}
+
+.dishName {
+  color: black;
+  width: fit-content;
+}
+
+.recipe-image {
+  width: 200px;
+  height: 200px;
+  position: relative;
+  top: 52px;
+  left: 50px;
+}
+
+.components {
+  display: flex;
+  position: relative;
+  bottom: 166px;
+  left: 321px;
+  width: fit-content;
+}
+
+.recipe-ingredients {
+  position: relative;
+  top: 50px;
+  right: 170px;
+  list-style-type: none;
+}
+
+.instructions {
+  position: relative;
+  bottom: 90px;
+  left: 60px;
+}
+
+.add-comment {
+  position: relative;
+  right: 100px;
+  bottom: 40px;
+}
+
+.user-comments {
+  position: relative;
+}
+
+.comment {
+  border: 1px solid black;
+  width: 90%;
+  height: auto;
+  margin: 10px 0;
+}
 
 .add-recipe {
   margin-top: 15px;
