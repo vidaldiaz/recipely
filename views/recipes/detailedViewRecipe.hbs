@@ -20,8 +20,10 @@
   {{#each comments}}
   <p>{{this.comment}}</p>
   <p>{{this.user.name}}</p>
+  {{#ifCond ../loggedUser comments.user._id}}
   <a href="/comments/edit/{{this.id}}"><button>Edit</button></a>
   <br>
   <a href="/comments/delete/{{this.id}}"><button>Delete</button></a>
+  {{/ifCond}}
   {{/each}}
 </div>

@@ -23,14 +23,11 @@ exports.addCommentPost = async (req, res) => {
 }
 
 exports.editCommentView = async (req, res) => {
-  console.log(req.params)
   const comments = await Comment.findById(req.params.id)
   res.render('comments/editComment', comments)
 }
 
 exports.editCommentPost = async (req, res) => {
-  console.log(req.params)
-  console.log(req.body)
   let comment = await Comment.findByIdAndUpdate(req.params.id, { ...req.body }).populate(
     'recipe',
     '_id'

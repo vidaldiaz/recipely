@@ -49,6 +49,10 @@ exports.showMatchedRecipes = async (req, res) => {
   const currentRecipe = await Inventory.findById(id)
   const ingredientsArray = currentRecipe.products
 
+  for (let i = 0; i < ingredientsArray.length; i++) {
+    ingredientsArray[i] = ingredientsArray[i].toLowerCase()
+  }
+
   console.log(`Ingredientes a Buscar: ${ingredientsArray}`)
 
   const allRecipes = await Recipe.find({})
@@ -84,12 +88,43 @@ exports.showMatchedRecipes = async (req, res) => {
 
 exports.showRecipeFullDetails = async (req, res) => {
   const { id } = req.params
-  let comments = await Comment.find().populate('user')
-  const currentRecipe = await Recipe.findById(id)
-  res.render('recipes/detailedViewRecipe', { currentRecipe, comments })
+  const currentRecipe = await Recipe.findById(id).populate({
+    path: 'comments',
+    model: 'Comment',
+    populate: {
+      path: 'user',
+      model: 'User',
+    },
+  })
+  console.log(currentRecipe)
+  res.render('recipes/detailedViewRecipe', {
+    currentRecipe,
+    comments: currentRecipe.comments,
+  })
 }
 
 exports.deleteRecipe = async (req, res) => {
   await Recipe.findByIdAndDelete(req.params.id)
   res.redirect('/profile')
 }
+
+// ;[
+//   {
+//     _id: '5eabeb058b68855196db7366',
+//     comment: 'Primer Comentario!',
+//     user: {
+//       recipes: [],
+//       inventories: ['5eabeaf38b68855196db7365'],
+//       comments: ['5eabeb058b68855196db7366'],
+//       _id: '5eabead78b68855196db7364',
+//       name: 'sapo',
+//       email: 'sapo@sapo.com',
+//       createdAt: '2020-05-01T09:24:39.675Z',
+//       updatedAt: '2020-05-01T09:25:25.552Z',
+//     },
+//     recipe: '5ea79e3badc94e26b6fd95f0',
+//     date: '2020-05-01T09:25:25.544Z',
+//     __v: 0,
+//   },
+// ]
+// --
